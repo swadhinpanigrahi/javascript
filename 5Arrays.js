@@ -79,17 +79,128 @@ for(let i of entriesValue){
 // console.log(entriesValue)
 
 ---find()
+var found1 = array1.find((element) => element > 70);
+console.log(found1);
+var found2 = array1.find((element) => element == "lipsa");
+console.log(found2);
+console.log(
+  "it will find the value with itteration and retuen the value : it will return single value."
+);
+
 ---findIndex()
+var found1 = array1.findIndex((element) => element > 70);
+console.log(found1);
+var found2 = array1.findIndex((element) => element == "lipsa");
+console.log(found2);
+console.log(
+    "it will find the index number with itteration and retuen the index value : it will return single value."
+);
+
 ---includes()
+var includesValue1 = array1.includes("lipsa");
+var includesValue2 = array1.includes("lisa");
+var includesValue3 = array1.includes("psa");
+console.log(includesValue1, includesValue2, includesValue3);
+console.log(
+  "it will find element from an array if it exist then it will return true or false"
+);
+
 ---toString()
+var toStringValue = array1.toString();
+console.log(toStringValue);
+console.log("it will convert a array into string value");
+
 ---valueOf()
+const iterator = array1.values();
+console.log(iterator);
+console.log(
+  "it will convert a array into Object! then we can perform the for of loop"
+);
+for (let value of iterator) {
+  console.log(value);
+}
+array1.forEach((value) => {
+  console.log(value);
+});
+
 ---fill()
+var array = [1, 2, 3, 4, 5, 6, 7, 8];
+// fill(in which value you want to change, from starting index, to ending index)
+console.log(array.fill(3, 6, 8));//(lastIndex -1)
+console.log(array.fill(3, 2))
+console.log(array.fill(3))
 
 
 HOM ( Higher Order Method )
 ---sort()
+var array = [10, 8, 3, 6, 0, 2, 66, 8, 4, 9, 1];
+console.log(array);
+console.log(array.sort());
+array.sort(function (a, b) {
+  return a - b;
+});
+console.log(array);
+console.log("it will arrange array value by increasing order...");
+
 ---every()
----filter()
+var array = [10, 20, 30, 49, 59, 60, 78, 79, 99, 46, 38];
+console.log(array);
+var checkValue = array.every((element) => {
+  return element < 100;
+});
+console.log(checkValue);
+console.log(
+  "it will iterate will all elements of an array and check the condition is satisfy or not and return true or false!"
+);
+
 ---some()
+var array = [10, 20, 30, 49, 59, 60, 78, 79, 99, 46, 38];
+var fun = (element) => element % 2 === 0;
+console.log(array.some(fun))
+
+---filter()
+var array = [];
+for (let i = 0; i < 101; i++) {
+  array.push(i);
+}
+var newArr = array.filter((value) => {
+  return (value % 3 === 0)
+});
+console.log(newArr);
+
 ---forEach()
+var array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//multiply all element by 5;
+array.forEach((value, i)=>{
+    console.log(i + " in this index we have this value : " +  value*5)
+})
+
+---map()
+var array = [];
+for (let i = 0; i < 101; i++) {
+  array.push(i);
+}
+var newArr = array
+  .map((value) => {
+    if (value % 3 === 0) {
+      return value;
+    }
+  })
+  .filter((element) => {
+    if (element != undefined) {
+      return element;
+    }
+  });
+console.log(newArr);
+
+---reduce()
+var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//array.reduce(accumulator, currentValue, currentIndex, array)
+var reduceValue = array.reduce((accumulator, currentValue) => {
+  return (accumulator + currentValue);
+}, 0);
+console.log(reduceValue)
+
 */
+
+

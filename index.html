@@ -1,0 +1,39 @@
+<script>
+    console.dir(Object)
+    // Object.create(prototypeObject, propertyObject) //this is create method;
+    var myObject = Object.create(Object.prototype);
+    var myLiteral = {};
+    console.dir(myObject)
+    console.dir(myLiteral)
+
+    //constructor
+    var Car = function(color){
+        this.color = color;
+    }
+    //---section1
+    var Car1 = new Car('Black')
+    var Car2 = Object.create(Car.prototype);
+    console.dir(Car1)
+    console.dir(Car2)
+
+    //---section2
+    Car.prototype = {
+        getColor(){
+            return this.color
+        }
+    }
+    let ToyCar = function(){
+
+    }
+    ToyCar.prototype = Object.create(Car.prototype)
+    var legoCar = new ToyCar();
+    console.dir(legoCar)
+    console.log(legoCar instanceof ToyCar)
+    console.log(legoCar instanceof Car)
+    console.log(legoCar instanceof Object)
+    console.log(ToyCar instanceof Car)
+
+    console.log(ToyCar.prototype.isPrototypeOf(legoCar))
+    console.log(Car.prototype.isPrototypeOf(legoCar))
+    console.log(Object.prototype.isPrototypeOf(legoCar))
+</script>
